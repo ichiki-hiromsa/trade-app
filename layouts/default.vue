@@ -21,10 +21,9 @@
       
       <v-spacer />
       <!-- 状態によってログイン/ログアウト表示変更 -->
-      <!-- <v-btn to="/login" nuxt color="white" class="black--text">
-        ログイン
-      </v-btn> -->
-
+        <v-btn v-if="!$store.state.isLogin" to="/login" nuxt color="white" class="black--text">
+          ログイン
+        </v-btn>
     </v-app-bar>
 
     <v-main>
