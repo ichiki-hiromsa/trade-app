@@ -40,9 +40,9 @@
 </template>
 
 <!-- ここから -->
-// methodの理解
 
 <script>
+// methodの理解
 import EmailForm from '~/components/users/EmailForm.vue'
 import PasswordForm from '~/components/users/PasswordForm.vue'
 
