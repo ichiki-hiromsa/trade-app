@@ -12,7 +12,9 @@
     <v-row justify="center" align="center" class="grey lighten-3">
       <v-col v-for="(icon,index) in icons" :key="index" cols="12" sm="6" md="4">
         <v-card height="150px" width="200px">
+          <a href="/item_detail">
           <img :src="icon.img" height="100px" width="150px"/>
+          </a>
           <!-- <img src="/img/img1.jpg" height="200"> -->
         </v-card>
       </v-col>
@@ -37,7 +39,7 @@ export default {
       icons:[
         {
           img:'/img/img1.jpg',
-          to:'/'
+          to:'/item_detail'
         },
         {
           img:'/img/img1.jpg',
