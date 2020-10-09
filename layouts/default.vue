@@ -21,9 +21,14 @@
       
       <v-spacer />
       <!-- 状態によってログイン/ログアウト表示変更 -->
-        <v-btn v-if="!$store.state.isLogin" to="/login" nuxt color="white" class="black--text">
+      <v-toolbar-items>
+        <v-btn v-if="!$store.state.isLogin" to="/regist/regist_top" nuxt>
+          新規会員登録
+        </v-btn>
+        <v-btn v-if="!$store.state.isLogin" to="/signup" nuxt>
           ログイン
         </v-btn>
+      </v-toolbar-items>
     </v-app-bar>
 
     <v-main>
@@ -47,11 +52,6 @@ export default {
       drawer: false,
       fixed: false,
       items: [
-                {
-          icon: 'mdi-home',
-          title: 'ログイン',
-          to: '/signup'
-        },
         {
           icon: 'mdi-home',
           title: 'トップ',
@@ -60,7 +60,7 @@ export default {
         {
           icon: 'mdi-star',
           title: 'マイページ',
-          to: '/mypage'
+          to: '/mypage/mypage_top'
         },
         {
           icon: 'mdi-apps',
@@ -70,12 +70,12 @@ export default {
                 {
           icon: 'mdi-apps',
           title: '規約',
-          to: '/terms'
+          to: '/tos'
         },
         {
           icon: 'mdi-help-box',
           title: 'お問い合わせ',
-          to: '/contact'
+          to: '/contact/contact_main'
         }
       ],
       miniVariant: false,

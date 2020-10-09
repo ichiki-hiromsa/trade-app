@@ -12,6 +12,7 @@
 
     </v-row>
     <v-card-actions class="justify-center">
+      <!-- ※【未】ログインフラグによってトレードに進むか登録に進むか -->
       <a href="/shuppin">
         <v-btn color="black--text" class="grey lighten-3">
           トレードに出す
