@@ -65,7 +65,7 @@ export default {
         {
           icon: 'mdi-apps',
           title: 'お知らせ',
-          to: '/information'
+          to: '/information/information'
         },
                 {
           icon: 'mdi-apps',
