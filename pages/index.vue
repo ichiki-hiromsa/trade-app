@@ -1,16 +1,20 @@
 <template>
   <div justify="center" align="center">
+     <v-container fluid grid-list-xl>
+      <v-row justify="space-around" wrap class="grey lighten-3">
+        <v-col v-for="(icon,index) in icons" :key="index">
+          <v-card width="300px">
+            <a href="/item_detail">
+              <v-img :src="icon.img" height="200px"/>
+            </a>
+            <v-card-title>
+              {{icon.title}}
+            </v-card-title>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
 
-    <v-row justify="center" align="center" class="grey lighten-3">
-      <v-col v-for="(icon,index) in icons" :key="index" cols="12" sm="6" md="4">
-        <v-card height="150px" width="200px">
-          <a href="/item_detail">
-          <img :src="icon.img" height="100px" width="150px"/>
-          </a>
-        </v-card>
-      </v-col>
-
-    </v-row>
     <v-card-actions class="justify-center">
       <!-- ※【未】ログインフラグによってトレードに進むか登録に進むか -->
       <a href="/shuppin">
@@ -31,23 +35,28 @@ export default {
       icons:[
         {
           img:'/img/img1.jpg',
-          to:'/item_detail'
+          to:'/item_detail',
+          title:'串カツ'
         },
         {
           img:'/img/img1.jpg',
-          to:'/'
+          to:'/',
+          title:'串カツ'  
         },
         {
           img:'/img/img1.jpg',
-          to:'/'
+          to:'/',
+          title:'串カツ'          
         },
         {
           img:'/img/img1.jpg',
-          to:'/'
+          to:'/',
+          title:'串カツ'          
         },
         {
           img:'/img/img1.jpg',
-          to:'/'
+          to:'/',
+          title:'串カツ'          
         }
       ]
     }
