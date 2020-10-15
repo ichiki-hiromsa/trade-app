@@ -5,8 +5,8 @@
         出品履歴
       </v-card-text>
       <v-data-table class="mt-5" :headers="headers" :items="items" sort-by="date">
-        <!-- 欲しい表示はできているが、エラーの内容がよくわからない -->
-        <template v-slot:item.action={ item }>
+        <!-- 欲しい表示はできているが、エラーの内容がわからない -->
+        <template v-slot:item.action="{ item }">
           <v-btn small class="mx-1" color="orange accent-4" :to="'/'">
             詳細
           </v-btn>
