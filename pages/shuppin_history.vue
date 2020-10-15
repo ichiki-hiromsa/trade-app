@@ -5,9 +5,10 @@
         出品履歴
       </v-card-text>
       <v-data-table class="mt-5" :headers="headers" :items="items" sort-by="date">
-        <template v-slot:item="{}">
+        <!-- 欲しい表示はできているが、エラーの内容がよくわからない -->
+        <template v-slot:item.action={ item }>
           <v-btn small class="mx-1" color="orange accent-4" :to="'/'">
-            <v-icon>pageview</v-icon>詳細
+            詳細
           </v-btn>
         </template>
       </v-data-table>
@@ -23,10 +24,10 @@
 </template>
 
 <script>
+import { mdiImageFilterBlackWhite } from '@mdi/js';
 export default {
   data () {
     return {
-      point: 'xxx',
       headers: [
           { 
             text: '日時', 
