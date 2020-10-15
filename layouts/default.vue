@@ -77,11 +77,7 @@ export default {
           title: 'お問い合わせ',
           to: '/contact/contact_main'
         }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: '交換アプリ'
+      ]
     }
   }
 }

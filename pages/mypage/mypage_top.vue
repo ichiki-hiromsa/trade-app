@@ -38,7 +38,6 @@ export default {
   data(){
     return{
       iconimg:'/img/whitebair.jpg',
-      item: 1,
       items: [
         { 
           text: 'お気に入り一覧',

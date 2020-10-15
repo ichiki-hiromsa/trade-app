@@ -3,9 +3,9 @@
     <v-container fluid grid-list-xl>
       <v-row justify="space-around" wrap class="grey lighten-3">
         <v-col v-for="(icon,index) in icons" :key="index">
-          <v-card width="300px">
+          <v-card width="500px">
             <a href="/item_detail/item_detail">
-              <v-img :src="icon.img" height="200px"/>
+              <v-img :src="icon.img" height="300px"/>
             </a>
             <v-card-title>
               {{icon.title}}
@@ -21,7 +21,6 @@
         </v-btn>
       </a>
     </v-card-actions>
-
   </div>  
 </template>
 
