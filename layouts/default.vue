@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
+    <v-navigation-drawer v-model="drawer" :clipped="clipped" fixed app>
     <!-- 左のプルダウンリスト中身 -->
       <v-list>
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
@@ -48,6 +48,7 @@
 export default {
   data () {
     return {
+      title:'交換アプリ',
       clipped: false,
       drawer: false,
       fixed: false,
