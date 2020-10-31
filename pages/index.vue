@@ -4,7 +4,7 @@
       <v-row justify="space-around" wrap class="grey lighten-3">
         <v-col v-for="(icon,index) in icons" :key="index">
           <v-card width="300px">
-            <a href="/item_detail">
+            <a href="/item_detail/item_detail">
               <v-img :src="icon.img" height="200px"/>
             </a>
             <v-card-title>
@@ -35,7 +35,7 @@ export default {
       icons:[
         {
           img:'/img/img1.jpg',
-          to:'/item_detail',
+          to:'/item_detail/item_detail',
           title:'串カツ'
         },
         {
