@@ -48,7 +48,7 @@
 export default {
   data () {
     return {
-      title:'交換アプリ',
+      title:'交換アプリだよ',
       clipped: false,
       drawer: false,
       fixed: false,
