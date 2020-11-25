@@ -67,7 +67,6 @@ export default {
           text: '登録情報の変更',
           to:'/regist/modify_regist_info_check'
         }
-
       ]
     }
   }

@@ -3,6 +3,22 @@
     <v-navigation-drawer v-model="drawer" :clipped="clipped" fixed app>
     <!-- 左のプルダウンリスト中身 -->
       <v-list>
+        <v-list-item v-if="!$store.state.isLogin" to="/regist/regist_top" nuxt>
+          <v-list-item-action>
+            <v-icon>mdi-account-box</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            新規会員登録
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item v-if="!$store.state.isLogin" to="/signup" nuxt>
+          <v-list-item-action>
+            <v-icon>mdi-account-circle</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            ログイン
+          </v-list-item-content>
+        </v-list-item>
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -18,17 +34,6 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       
       <v-toolbar-title v-text="title" />
-      
-      <v-spacer />
-      <!-- 状態によってログイン/ログアウト表示変更 -->
-      <v-toolbar-items>
-        <v-btn v-if="!$store.state.isLogin" to="/regist/regist_top" nuxt>
-          新規会員登録
-        </v-btn>
-        <v-btn v-if="!$store.state.isLogin" to="/signup" nuxt>
-          ログイン
-        </v-btn>
-      </v-toolbar-items>
     </v-app-bar>
 
     <v-main>
@@ -77,6 +82,11 @@ export default {
           icon: 'mdi-help-box',
           title: 'お問い合わせ',
           to: '/contact/contact_main'
+        },
+        {
+          icon: 'mdi-help-box',
+          title: 'テスト',
+          to: '/test'
         }
       ]
     }
