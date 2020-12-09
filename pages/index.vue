@@ -28,8 +28,21 @@
 </template>
 
 <script>
-
+// firebaseテストstart
+import firebase from "~/plugins/firebase.js"
 export default {
+  mounted(){
+  const db = this.$firebase.firestore();  db.collection("users").doc("oYljL6ibEQRk3AKnNks0").get()
+  .then(doc=>{
+    const data = doc.data()
+    console.log(data);
+  })
+  // db.collection("users").add({
+  //   name:"kino",
+  //   state:1})
+  },
+// firebaseテストend
+
   data () {
     return {
       icons:[
@@ -62,6 +75,7 @@ export default {
     }
   }
 }
+
 </script>
 <style scoped>
 a {
