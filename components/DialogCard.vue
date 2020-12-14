@@ -1,22 +1,25 @@
 <template>
   <v-card>
-    <v-card-title>Component Title</v-card-title>
+    <v-card-title>ポイント購入画面</v-card-title>
     <v-card-text>
       <v-container>
         <v-row>
           <v-col cols="12">
-            <v-text-field label="Name" v-model="returnData.name" required></v-text-field>
-          </v-col>
-          <v-col cols="12">
-            <v-text-field label="E-mail" v-model="returnData.email" required></v-text-field>
+            <v-card-text>
+              {{select_flg}}ポイント購入します。
+              <br>よろしいですか？
+            </v-card-text>
           </v-col>
         </v-row>
       </v-container>
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn text color="success" @click="submit">
-        OK
+      <v-btn text color="success" @click="submit_y">
+        交換する
+      </v-btn>
+      <v-btn text color="secondary" @click="submit_n">
+        キャンセル
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -25,21 +28,27 @@
 <script>
 export default {
   props: {
-    name: '',
-    email: ''
+    select_flg: '',
+    purch_
   },
   data() {
     return {
-      returnData: {
-        name: this.name,
-        email: this.email
+      returnData_y: {
+        select_flg: true,
+      },
+      returnData_n: {
+        select_flg: false,
       }
     }
   },
   methods: {
-    submit() {
-      this.$emit('clickSubmit', this.returnData)
+    submit_y() {
+      this.$emit('clickSubmit', this.returnData_y)
+    },
+    submit_n() {
+      this.$emit('clickSubmit', this.returnData_n)
     }
+
   }
 }
 </script>

@@ -8,12 +8,10 @@
       <!-- テンプレートの読み込み -->
       <dialog-card
         v-on:clickSubmit="onSubmit"
-        :name="name"
-        :email="email"
+        :select_flg="select_flg"
       ></dialog-card>
     </v-dialog>
-    <v-text-field v-model="name" label="Name" disabled></v-text-field>
-    <v-text-field v-model="email" label="E-mail" disabled></v-text-field>
+    <v-text-field v-model="select_flg" label="Name" disabled></v-text-field>
   </div>
 </template>
 
@@ -27,15 +25,14 @@ export default {
   data() {
     return {
       name: '',
-      email: '',
+      select_flg: '',
       dialog: false
     }
   },
   methods: {
     onSubmit(params) {
       this.dialog =false
-      this.name = params.name
-      this.email = params.email
+      this.select_flg = params.select_flg
     }
   }
 }

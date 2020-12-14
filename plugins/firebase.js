@@ -2,8 +2,11 @@
 import firebase from 'firebase'
 import 'firebase/firestore'
 
+//20201209 認証
+import 'firebase/auth'
+
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyDPmTuxn4hqevx0vlAeZx2SKnUjsEl8l-A",
   authDomain: "trade-app-ichi.firebaseapp.com",
   databaseURL: "https://trade-app-ichi.firebaseio.com",
@@ -14,24 +17,11 @@ var firebaseConfig = {
   measurementId: "G-17EG0SXK58"
 };
 
-firebase.initializeApp(firebaseConfig);
+if (firebase.apps.length === 0) {
+  firebase.initializeApp(firebaseConfig);
+}
 
+// nuxtの書き方、どこでも使えるように
 export default function(app,inject){
   inject('firebase',firebase)
 }
-
-// //試行錯誤
-// //firebase appを全部使えるようにする
-// var firebase = require("firebase");
-// //初期設定を追加
-// //ここで読み込めない
-// firebase.initializeApp({
-//   apiKey: "AIzaSyDPmTuxn4hqevx0vlAeZx2SKnUjsEl8l-A",
-//   authDomain: "trade-app-ichi.firebaseapp.com",
-//   databaseURL: "https://trade-app-ichi.firebaseio.com",
-//   projectId: "trade-app-ichi",
-//   storageBucket: "trade-app-ichi.appspot.com",
-//   messagingSenderId: "252217173678",
-// });
-
-// // export default firebase;
