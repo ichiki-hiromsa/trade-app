@@ -16,7 +16,7 @@ export default async ({ store, parms, redirect, route }) => {
     } else {
       //storeのログイン情報を消す
       //ログイン画面に飛ばす。router.nameはurl
-      if (route.name !== "login") redirect("/login")
+      // if (route.name !== "signup") redirect("/signup")
     }
   })
 }

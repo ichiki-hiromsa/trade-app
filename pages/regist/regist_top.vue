@@ -5,7 +5,7 @@
         <v-card-title class="justify-center headline">
           新規会員登録
         </v-card-title>
-
+          {{$store.getters.userInfo}}
         <v-form ref="form" v-model="valid">
           <!-- 子が親に知らせて親が値を変更する→.sync -->
           <!-- バインドするキーにsyncをつけると送受信が可能になる -->
@@ -17,8 +17,6 @@
           <v-text-field label="クレカ情報" />
 
           <email-form :email.sync="email" />
-          <!-- <v-text-field 
-          :email.sync="email" /> -->
           <!-- validation→→org, パスワードコンポーネント内でフラグとして扱う。デフォルトでfalseの値を持ち、プロパティを渡すとtrueになる-->
           <password-form :password.sync="password" validation />
           <v-card-text class="text-center">
@@ -103,7 +101,7 @@ export default {
             alert("エラーが起きました。\nしばらくしてから再度お試しください。");
           }
           console.log(errorCode);
-        });
+      });
     },
   },
 };

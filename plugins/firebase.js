@@ -21,6 +21,9 @@ if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig);
 }
 
+export const auth = firebase.auth();
+export const db = firebase.firestore();
+
 // nuxtの書き方、どこでも使えるように
 export default function(app,inject){
   inject('firebase',firebase)
