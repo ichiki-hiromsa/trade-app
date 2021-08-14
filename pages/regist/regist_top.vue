@@ -72,6 +72,7 @@ export default {
     password: "",
     loading: false,
   }),
+  
   methods: {
     createAccount() {
       const auth = this.$firebase.auth();
